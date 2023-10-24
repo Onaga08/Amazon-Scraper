@@ -20,7 +20,7 @@ try:
     # Starting page URL
     base_url = "https://www.amazon.in/s?k=bags"
 
-    for page_number in range(1, 4): 
+    for page_number in range(1, 10): 
         page_url = f"{base_url}&page={page_number}"
 
         driver.get(page_url)
@@ -57,7 +57,6 @@ try:
             csv_writer.writerow(['Product Urls', 'Product Name', 'Product Price', 'Rating', 'Number of Reviews'])
             for url, name, price, star_rating, num_ratings in zip(urls, product_names, prices, star_ratings, rating_numbers):
                 csv_writer.writerow([url, name, price, star_rating, num_ratings])
-
 
 finally:
     driver.quit()
